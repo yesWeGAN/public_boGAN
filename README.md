@@ -1,6 +1,6 @@
 # public boGAN
 ### adapting VQGAN for conditional human pose generation. 
-####All credits, copyrights go to the original content authors below.  
+#### All credits, copyrights go to the original content authors below.  
    
 
 The public side of my computer vision projects. Most of my work branches off public repos, 
@@ -29,7 +29,8 @@ and are kept in private.
 - see sample below
 
 ##### current status:
-VQGAN encoder, 19.03.2022 after 60 epochs:
+VQGAN encoder, 19.03.2022 after 60 epochs:  
+VQGAN does not yet provide adequate codebook for face reconstruction.
 
 ![vqgan-sample](assets/reconstructions_gs-062214_e-000003_b-012750.png)
 
@@ -44,7 +45,7 @@ transformer-generated samples, 18.03.22 in epoch 115
 **(top_k_250_temp_1.00_top_p_0.5):**
 
 low variation in posture, but definite contours.  
-VQGAN does not yet provide adequate codebook for facial reconstruction.
+
 
 ![transformer-sample](assets/000024.png)
 ![transformer-sample](assets/000105.png)
