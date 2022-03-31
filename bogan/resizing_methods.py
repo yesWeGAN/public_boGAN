@@ -65,13 +65,6 @@ def resize_img_ar_preserve(og_size, desired_dim):
     """input: image and a dimension.
         returns image with max-dim [desired_dim] and preserved aspect-ratio.
         """
-    height = og_size.shape[0]
-    width = og_size.shape[1]
-
-    if height > width:
-        argmax = 0
-    else:
-        argmax = 1
 
     # cv2 is in width, height
     KEEP_ASPECT_RATIO = desired_dim / max(og_size.shape)

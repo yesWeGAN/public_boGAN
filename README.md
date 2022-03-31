@@ -1,19 +1,32 @@
-# public_boGAN
-The public side of my computer vision projects.  
-
+# public boGAN
 ### adapting VQGAN for conditional human pose generation. 
-#### All credits, copyrights go to the original content authors below.
+####All credits, copyrights go to the original content authors below.  
+   
+
+The public side of my computer vision projects. Most of my work branches off public repos, 
+and are kept in private. 
+
+
 ##### contributions so far: 
 
-- gathered 350k-dataset from Webshops using self-built html-crawler
+**Dataset**
+
+- gathered **350k**-dataset from Webshops using self-built sitemap-crawler
   - created mappings and parser for tags and product infos to construct dataset labels  
   - created proprietary Dataset class to load images, masks, DensePose tensor
   - scripts to create segmentation masks (openCV) from DensePose tensors  
 
+**Generative Training on 30k subset**
 
-- trained VQGAN and unconditional transformers (very limited by hardware settings) on 30k-sample-dataset (unfiltered)
+- limited by hardware: 8 Gbyte CUDA GPU  
+- trained VQGAN (see below), no convergence yet (big batch size not feasible)   
+- unconditional transformers for new image generation
 
+**Superresolution**
 
+- adjust ESRGAN to train with pairs: high-res original - low-res VQVAE-reconstructions
+- same procedure on GFPGAN to resolve issues in face reconstruction
+- see sample below
 
 ##### current status:
 VQGAN encoder, 19.03.2022 after 60 epochs:
@@ -35,8 +48,6 @@ VQGAN does not yet provide adequate codebook for facial reconstruction.
 
 ![transformer-sample](assets/000024.png)
 ![transformer-sample](assets/000105.png)
-
-
 
 
 **(top_k_250_temp_1.00_top_p_1.0):**  
